@@ -1,5 +1,8 @@
 
   user-list:
   <ol>
-    <li *ngFor="let name of names">Hello {{name}}</li>
+    <li *ngFor="let name of names">Hello {{name}}
+      <app-user-item [nameInput]="name"></app-user-item>
+    </li>
+    
   </ol>
