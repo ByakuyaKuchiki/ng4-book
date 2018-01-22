@@ -7,9 +7,14 @@ I got it working by installing @types/jquery from npm.
 
 Deployment
 ===================================================================
-npm -i -g now
+generate dist:
+`ng build --target=production --base-href /`
 
-1. go to dist folder (cd dist)
+deploy prototype web:
+
+`npm -i -g now`
+
+1. go to dist folder `cd dist`
 2. in terminal `now`
 3. login
 4. follow steps
