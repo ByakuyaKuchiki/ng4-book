@@ -1,5 +1,11 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  AfterViewInit, 
+  EventEmitter
+   } from '@angular/core';
 import { Article } from "./modeles/article.model";
+import { Product } from "./modeles/product.model";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };
 
-  beforechange
+  product: Product[];
 
   constructor() {
     this.articles = [
@@ -20,6 +26,26 @@ export class AppComponent implements OnInit, AfterViewInit {
       new Article('Fullstack', 'http://fullstack.io', 2),
       new Article('Angular Homepage', 'http://angular.io', 1),
     ];
+
+    this.product = [ new Product(
+       'MYSHOES',
+       'Black Running Shoes',
+       '/assets/images/products/black-shoes.jpg',
+       ['Men', 'Shoes', 'Running Shoes'],
+       109.99),
+       new Product(
+       'NEATOJACKET',
+       'Blue Jacket',
+       '/assets/images/products/blue-jacket.jpg',
+       ['Women', 'Apparel', 'Jackets & Vests'],
+       238.99),
+       new Product(
+       'NICEHAT',
+       'A Nice Black Hat',
+       '/assets/images/products/black-hat.jpg',
+       ['Men', 'Accessories', 'Hats'],
+       29.99)
+    ]
   }
 
   ngOnInit() {
@@ -50,6 +76,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   sortArticle():Article[]{
     return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+  }
+
+  productWasSelected(product: Product): void{
+    console.log('the product: ', product);
   }
 
 
