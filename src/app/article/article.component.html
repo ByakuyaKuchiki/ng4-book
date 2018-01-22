@@ -1,29 +1,34 @@
-<div class="four wide column center aligned votes">
-  <div class="ui statistic">
-    <div class="value">
-      {{ article.votes }}
+
+  <div class="clash-card {{currentTheme}}">
+    <div class="clash-card__image clash-card__image--{{currentTheme}}">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/{{currentTheme}}.png" alt="barbarian" />
     </div>
-    <div class="label">
-      Points
+    <div class="clash-card__level clash-card__level--{{currentTheme}}">{{ article.votes }}</div>
+    <div class="clash-card__unit-name">
+      <a href="{{ article.link }}">{{ article.title }}</a>
     </div>
+    <div class="clash-card__unit-description">
+      The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer
+      yellow horseshoe mustache.
+    </div>
+
+    <div class="clash-card__unit-stats clash-card__unit-stats--{{currentTheme}} clearfix">
+      <div class="one-third" (click)="voteUp()">
+        <div class="stat">{{article.voteUpInt}}</div>
+        <div class="stat-value">Up</div>
+      </div>
+
+      <div class="one-third" (click)="voteDown()">
+        <div class="stat">{{article.voteDownInt}}</div>
+        <div class="stat-value">Down</div>
+      </div>
+
+      <div class="one-third no-border">
+        <div class="stat">{{ article.votes }}</div>
+        <div class="stat-value">total</div>
+      </div>
+
+    </div>
+
   </div>
-</div>
-<div class="twelve wide column">
-  <a class="ui large header" href="{{ article.link }}">
-    {{ article.title }}
-  </a>
-  <ul class="ui big horizontal list voters">
-    <li class="item">
-      <a href (click)="voteUp()">
-        <i class="arrow up icon"></i>
-        upvote
-      </a>
-    </li>
-    <li class="item">
-      <a href (click)="voteDown()">
-        <i class="arrow down icon"></i>
-        downvote
-      </a>
-    </li>
-  </ul>
-</div>
+  <!-- end clash-card {{currentTheme}}-->

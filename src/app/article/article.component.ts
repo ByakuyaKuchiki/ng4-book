@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { Article } from "../modeles/article.model";
+import { CustomMath } from "../tools/maths";
 
 @Component({
   selector: 'app-article',
@@ -11,10 +12,18 @@ export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass= "row";
   @Input() article: Article;
 
-  constructor() { }
+  themes: string[];
+  currentTheme: string;
+  maths: CustomMath;
+
+  constructor() {
+    this.themes = ['archer', 'barbarian', 'giant', 'goblin', 'wizard'];
+    this.maths = new CustomMath();
+   }
 
   ngOnInit() {
-
+    const index =this.maths.getRand(this.themes.length);
+    this.currentTheme = this.themes[parseInt(index)];
   }
 
   voteUp():boolean{
