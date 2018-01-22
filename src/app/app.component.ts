@@ -8,7 +8,7 @@ import { Article } from "./modeles/article.model";
 })
 export class AppComponent {
   title = 'app';
-  articles:Article[];
+  articles: Article[];
   addArticle(title: HTMLInputElement, link: HTMLInputElement):boolean{
     console.log(`Adding new article: ${title.value} and link ${link.value}`);
     return false;
