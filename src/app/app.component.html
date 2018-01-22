@@ -1,32 +1,28 @@
-
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <form class="ui large form segment">
-    <h3 class="ui header">Add a Link</h3>
-
-    <div class="field">
-      <label for="title">Title:</label>
-      <input name="title" #newTitle>
-    </div>
-    <div class="field">
-      <label for="link">Link:</label>
-      <input name="link" #newLink>
-    </div>
-    <div class="submit">
-      <button (click)="addArticle(newTitle, newLink)"> Submit link</button>
-    </div>
-  </form>
-  <ngx-slick 
-      class="slide-container" 
-      #slickModal="slick-modal" 
-      [config]="slideConfig"
-      (afterChange)="afterChange($event)"
-      (beforeChange)="beforeChange($event)">
-      <app-article 
-          ngxSlickItem
-          class="wrapper" 
-          *ngFor="let article of articles" 
-          [article]="article">
-      </app-article>
-  </ngx-slick>
+<h1>
+  Welcome to {{ title }}!
+</h1>
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name" />
+      <input type="password" placeholder="password" />
+      <input type="text" placeholder="email address" />
+      <button>create</button>
+      <p class="message">Already registered?
+        <a href="#">Sign In</a>
+      </p>
+    </form>
+    <form class="add-article-form">
+      <input type="text" placeholder="title" #newTitle/>
+      <input type="text" placeholder="link" #newLink/>
+      <button (click)="addArticle(newTitle, newLink)">Add Article</button>
+      <p class="message">Not registered?
+        <a href="#">Create an account</a>
+      </p>
+    </form>
+  </div>
+</div>
+<ngx-slick class="slide-container" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+  <app-article ngxSlickItem class="wrapper" *ngFor="let article of articles" [article]="article">
+  </app-article>
+</ngx-slick>
