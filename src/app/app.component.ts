@@ -48,5 +48,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     $('.slick-active').find('.clash-card img').fadeIn(200);
   }
 
+  sortArticle():Article[]{
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+  }
+
 
 }
