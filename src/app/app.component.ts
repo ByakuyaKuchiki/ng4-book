@@ -6,13 +6,14 @@ import { Article } from "./modeles/article.model";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'app';
   articles: Article[];
-  addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
-    console.log(`Adding new article: ${title.value} and link ${link.value}`);
-    return false;
-  }
+
+  slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };
+
+  beforechange
+
   constructor() {
     this.articles = [
       new Article('Angular 2', 'http://angular.io', 3),
@@ -21,31 +22,31 @@ export class AppComponent implements OnInit {
     ];
   }
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
 
   ngAfterViewInit() {
-    (function () {
-
-      var slideContainer = $('.slide-container');
-
-      slideContainer.slick();
-
-      $('.clash-card__image img').hide();
-      $('.slick-active').find('.clash-card img').fadeIn(200);
-
-      // On before slide change
-      slideContainer.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        $('.slick-active').find('.clash-card img').fadeOut(1000);
-      });
-
-      // On after slide change
-      slideContainer.on('afterChange', function (event, slick, currentSlide) {
-        $('.slick-active').find('.clash-card img').fadeIn(200);
-      });
-
-    })();
-
+    $('.clash-card__image img').hide();
+    $('.slick-active').find('.clash-card img').fadeIn(200);
   }
+
+  addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+    console.log(`adding new article: ${title.value}, link ---> ${link.value}`);
+    this.articles.push(new Article(title.value, link.value));
+    title.value = '';
+    link.value = '';
+
+    return false;
+  }
+
+  beforeChange(e) {
+    $('.slick-active').find('.clash-card img').fadeOut(1000);
+  }
+
+  afterChange(e) {
+    $('.slick-active').find('.clash-card img').fadeIn(200);
+  }
+
+
 }

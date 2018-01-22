@@ -17,6 +17,16 @@
       <button (click)="addArticle(newTitle, newLink)"> Submit link</button>
     </div>
   </form>
-  <div class="slide-container">
-    <app-article class="wrapper" *ngFor="let article of articles" [article]="article"></app-article>
-  </div> 
+  <ngx-slick 
+      class="slide-container" 
+      #slickModal="slick-modal" 
+      [config]="slideConfig"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)">
+      <app-article 
+          ngxSlickItem
+          class="wrapper" 
+          *ngFor="let article of articles" 
+          [article]="article">
+      </app-article>
+  </ngx-slick>

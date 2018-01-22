@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { SlickModule } from "ngx-slick";
+
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -18,7 +20,8 @@ import { ArticleComponent } from './article/article.component';
     ArticleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SlickModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

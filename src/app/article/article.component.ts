@@ -23,7 +23,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     const index =this.maths.getRand(this.themes.length);
-    this.currentTheme = this.themes[parseInt(index)];
+    this.currentTheme = this.themes[index];
   }
 
   voteUp():boolean{
