@@ -19,6 +19,8 @@ import { ProductImageComponent } from './product-image/product-image.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProductDepartementComponent } from './product-departement/product-departement.component';
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
+import { UserComponent } from './user/user.component';
+import { UserInjectorComponent } from './user.injector/user.injector.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
     ProductImageComponent,
     PriceDisplayComponent,
     ProductDepartementComponent,
-    DemoFormSkuComponent
+    DemoFormSkuComponent,
+    UserComponent,
+    UserInjectorComponent
   ],
   imports: [
     BrowserModule,
