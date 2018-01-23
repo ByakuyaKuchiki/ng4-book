@@ -1,4 +1,4 @@
-<h1>
+<h1 class="title">
   Welcome to {{ title }}!
 </h1>
 <div class="login-page">
@@ -10,23 +10,15 @@
     </form>
   </div>
 </div>
-<ngx-slick 
-  class="slide-container" 
-  #slickModal="slick-modal" 
-  [config]="slideConfig" 
-  (afterChange)="afterChange($event)" 
-  (beforeChange)="beforeChange($event)">
-  <app-article 
-    ngxSlickItem 
-    class="wrapper" 
-    *ngFor="let article of articles" 
-    [article]="article">
-  </app-article>
-</ngx-slick>
-
+<div class="article-slider">
+  <h2 class="title"> article slider + votes </h2>
+  <ngx-slick class="slide-container" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <app-article ngxSlickItem class="wrapper" *ngFor="let article of articles" [article]="article">
+    </app-article>
+  </ngx-slick>
+</div>
+<h2 class="title">product list</h2>
 <div class="inventory-app">
-  <products-list
-    [productList]="products"                                       
-    (onProductSelected)="productWasSelected($event)">
-  </products-list> 
+  <products-list [productList]="products" (onProductSelected)="productWasSelected($event)">
+  </products-list>
 </div>

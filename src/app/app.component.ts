@@ -13,7 +13,7 @@ import { Product } from "./modeles/product.model";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  title = 'app';
+  title = 'tutorial app';
   articles: Article[];
 
   slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };

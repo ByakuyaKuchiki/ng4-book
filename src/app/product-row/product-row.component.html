@@ -1,11 +1,20 @@
-<product-image [product]="product"></product-image>
-<div class='content'>
-  <div class='header'>{{product.name}}</div>
-  <div class='meta'>
-    <div class='product-sku'>SKU #{{product.sku}}</div>
-  </div>
-  <div class='description'>
-    <product-departement [product]='product'></product-departement>
+<div class="item  col-xs-4 col-lg-4">
+  <div class="thumbnail">
+    <product-image [product]="product"></product-image>
+    <div class="caption">
+      <h4 class="group inner list-group-item-heading">
+        {{product.name}}</h4>
+      <p class="group inner list-group-item-text">
+        <product-departement [product]='product'></product-departement>
+      </p>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <price-display class="lead" [price]='product.price'></price-display>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <a class="btn btn-success">SKU #{{product.sku}}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<price-display [price]='product.price'></price-display>

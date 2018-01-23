@@ -2,7 +2,7 @@
     background: white;
     width: 300px;
     display: inline-block;
-    margin: auto;
+    margin: 50px auto;
     border-radius: 19px;
     position: relative;
     text-align: center;
@@ -196,3 +196,4 @@
     right: 100px;
     z-index: 999;
   }
+
