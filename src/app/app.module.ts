@@ -12,6 +12,9 @@ import { UserListComponent } from './user-list/user-list.component';
 import { ArticleComponent } from './article/article.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductRowComponent } from './product-row/product-row.component';
+import { ProductImageComponent } from './product-image/product-image.component';
+import { PriceDisplayComponent } from './price-display/price-display.component';
+import { ProductDepartementComponent } from './product-departement/product-departement.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { ProductRowComponent } from './product-row/product-row.component';
     UserListComponent,
     ArticleComponent,
     ProductsListComponent,
-    ProductRowComponent
+    ProductRowComponent,
+    ProductImageComponent,
+    PriceDisplayComponent,
+    ProductDepartementComponent
   ],
   imports: [
     BrowserModule,

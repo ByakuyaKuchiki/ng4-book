@@ -25,9 +25,6 @@ export class ProductsListComponent {
     this.onProductSelected = new EventEmitter<Product>();
   }
 
-  ngOnInit() {
-  }
-
   clicked(product: Product):void {
     this.currentProduct = product;
     this.onProductSelected.emit(product);

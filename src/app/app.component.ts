@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };
 
-  product: Product[];
+  products: Product[];
 
   constructor() {
     this.articles = [
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       new Article('Angular Homepage', 'http://angular.io', 1),
     ];
 
-    this.product = [ new Product(
+    this.products = [ new Product(
        'MYSHOES',
        'Black Running Shoes',
        '/assets/images/products/black-shoes.jpg',
