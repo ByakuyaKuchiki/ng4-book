@@ -13,28 +13,36 @@ import { Validation } from "../tools/validations";
 export class DemoFormSkuComponent implements AfterViewInit{
 
   myForm: FormGroup;
-  sku: AbstractControl;
+  name: AbstractControl;
   validation: Validation;
-  storedSku: string;
+  storedName: string;
+  solvedForm: string;
+  submitted: boolean;
 
   constructor(fb: FormBuilder) {
+
+    this.submitted = false;
     this.validation = new Validation();
     this.myForm = fb.group({
-      'sku': ['', Validators.compose([Validators.required, this.validation.skuValidator])]
+      'name': ['', Validators.compose([Validators.required, this.validation.skuValidator])]
     });
-    this.sku = this.myForm.controls['sku'];
+    this.name = this.myForm.controls['name'];
 
-    this.sku.valueChanges.subscribe((value: string) => {
+    this.name.valueChanges.subscribe((value: string) => {
+      this.submitted = false;
       if(!value){
-        this.storedSku = 'empty';
+        this.storedName = 'empty';
       }else{
-        this.storedSku = value;
+        this.storedName = value;
       }
     });
    }
 
   onSubmit(form: any):void {
-    console.log('submited', form);
+    if(this.myForm.valid){
+      this.solvedForm = form;
+      this.submitted = true;
+    }
   }
 
   ngAfterViewInit(){

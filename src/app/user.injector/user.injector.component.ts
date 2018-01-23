@@ -1,4 +1,4 @@
-import { Component, ReflectiveInjector } from '@angular/core';
+import { Component, ReflectiveInjector, Input } from '@angular/core';
 
 import { UserService } from "../services/user/user.service";
 
@@ -8,6 +8,8 @@ import { UserService } from "../services/user/user.service";
   styleUrls: ['./user.injector.component.css']
 })
 export class UserInjectorComponent {
+
+  @Input() form: any;
 
   userName: string;
   userServive: UserService;
@@ -20,11 +22,9 @@ export class UserInjectorComponent {
    }
   
    signIn():void {
-    this.userServive.setUser({
-      name: 'Nate Murray'
-    });
+    this.userServive.setUser(this.form);
 
-    this.userName = this.userServive.getUser().name;
+    this.userName = this.userServive.getUser().name || 'unknown JSON object';
 
     console.log('Username is: ', this.userName);
    }

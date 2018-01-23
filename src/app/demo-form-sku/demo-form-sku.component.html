@@ -1,18 +1,24 @@
 <form [formGroup]="myForm" class="ui form" (ngSubmit)="onSubmit(myForm.value)" [class.error]="!myForm.valid && myForm.touched">
   <div class="cntr">
-    <div class="cntr-innr" [class.error]="!sku.valid && sku.touched">
+    <div class="cntr-innr" [class.error]="!name.valid && name.touched">
       <label class="search" for="inpt_search">
-        <input type="text" id="inpt_search" name="sku" [formControl]="myForm.controls['sku']">
+        <input type="text" id="inpt_search" name="name" [formControl]="myForm.controls['name']">
       </label>
-      <div *ngIf="!sku.valid" class="ui error message">SKU is invalid</div>
-      <div *ngIf="sku.hasError('required')" class="ui error message">SKU is required</div>
-      <div *ngIf="sku.hasError('invalidSku')" class="ui error message">SKU must begin with
+      <div *ngIf="!name.valid" class="ui error message">name is invalid</div>
+      <div *ngIf="name.hasError('required')" class="ui error message">name is required</div>
+      <div *ngIf="name.hasError('invalidName')" class="ui error message">name must begin with
         <span>123</span>
       </div>
 
       <div *ngIf="!myForm.valid" class="ui error message">Form is invalid</div>
-      <button *ngIf="sku.valid" type="submit" class="ui button">Submit</button>
-      <div *ngIf="storedSku">the current SKU value is: {{storedSku}}</div>
+      <button *ngIf="name.valid" type="submit" class="ui button">Submit</button>
+      <div *ngIf="storedName">the current name value is: {{storedName}}</div>
     </div>
   </div>
 </form>
+<div class="cntr">
+  <div class="cntr-innr">
+    <span *ngIf='!solvedForm || !myForm.valid'>Solve the Form and submit to Login</span>
+    <user-injector *ngIf="submitted" [form]="solvedForm"></user-injector>
+  </div>
+</div>
