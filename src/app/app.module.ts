@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule,
+        ReactiveFormsModule } from "@angular/forms";
+
 import { SlickModule } from "ngx-slick";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
@@ -15,6 +18,7 @@ import { ProductRowComponent } from './product-row/product-row.component';
 import { ProductImageComponent } from './product-image/product-image.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProductDepartementComponent } from './product-departement/product-departement.component';
+import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 
 
 @NgModule({
@@ -28,12 +32,15 @@ import { ProductDepartementComponent } from './product-departement/product-depar
     ProductRowComponent,
     ProductImageComponent,
     PriceDisplayComponent,
-    ProductDepartementComponent
+    ProductDepartementComponent,
+    DemoFormSkuComponent
   ],
   imports: [
     BrowserModule,
     SlickModule.forRoot(),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
