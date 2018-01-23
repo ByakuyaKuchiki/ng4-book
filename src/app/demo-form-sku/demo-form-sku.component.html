@@ -12,6 +12,7 @@
 
       <div *ngIf="!myForm.valid" class="ui error message">Form is invalid</div>
       <button *ngIf="sku.valid" type="submit" class="ui button">Submit</button>
+      <div *ngIf="storedSku">the current SKU value is: {{storedSku}}</div>
     </div>
   </div>
 </form>

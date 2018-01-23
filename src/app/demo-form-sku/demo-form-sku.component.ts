@@ -15,6 +15,7 @@ export class DemoFormSkuComponent implements AfterViewInit{
   myForm: FormGroup;
   sku: AbstractControl;
   validation: Validation;
+  storedSku: string;
 
   constructor(fb: FormBuilder) {
     this.validation = new Validation();
@@ -22,6 +23,14 @@ export class DemoFormSkuComponent implements AfterViewInit{
       'sku': ['', Validators.compose([Validators.required, this.validation.skuValidator])]
     });
     this.sku = this.myForm.controls['sku'];
+
+    this.sku.valueChanges.subscribe((value: string) => {
+      if(!value){
+        this.storedSku = 'empty';
+      }else{
+        this.storedSku = value;
+      }
+    });
    }
 
   onSubmit(form: any):void {
