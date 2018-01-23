@@ -3,6 +3,7 @@ import { FormBuilder,
           FormGroup,
           Validators,
           AbstractControl } from "@angular/forms";
+import { Validation } from "../tools/validations";
 
 @Component({
   selector: 'app-demo-form-sku',
@@ -13,10 +14,12 @@ export class DemoFormSkuComponent{
 
   myForm: FormGroup;
   sku: AbstractControl;
+  validation: Validation;
 
   constructor(fb: FormBuilder) {
+    this.validation = new Validation();
     this.myForm = fb.group({
-      'sku': ['', Validators.required]
+      'sku': ['', Validators.compose([Validators.required, this.validation.skuValidator])]
     });
     this.sku = this.myForm.controls['sku'];
    }

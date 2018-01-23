@@ -14,6 +14,7 @@
               [formControl]="myForm.controls['sku']">
       <div *ngIf="!sku.valid" class="ui error message">SKU is invalid</div>
       <div *ngIf="sku.hasError('required')" class="ui error message">SKU is required</div>
+      <div *ngIf="sku.hasError('invalidSku')" class="ui error message">SKU must begin with <span>123</span></div>
     </div>
     <div *ngIf="!myForm.valid" class="ui error message">Form is invalid</div>
     <button type="submit" class="ui button">Submit</button>
