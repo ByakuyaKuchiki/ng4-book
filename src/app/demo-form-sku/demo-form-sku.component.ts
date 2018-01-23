@@ -45,6 +45,13 @@ export class DemoFormSkuComponent implements AfterViewInit{
     }
   }
 
+
+  loggedUser(log: boolean){
+    if(log){
+      this.name.setValue('');
+    }
+  }
+
   ngAfterViewInit(){
     $("#inpt_search").on('focus', function () {
       $(this).parent('label').addClass('active');

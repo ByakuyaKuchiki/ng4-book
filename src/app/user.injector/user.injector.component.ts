@@ -1,4 +1,4 @@
-import { Component, ReflectiveInjector, Input } from '@angular/core';
+import { Component, ReflectiveInjector, Input, Output, EventEmitter } from '@angular/core';
 
 import { UserService } from "../services/user/user.service";
 
@@ -10,12 +10,16 @@ import { UserService } from "../services/user/user.service";
 export class UserInjectorComponent {
 
   @Input() form: any;
+  @Output() userLogged: EventEmitter<boolean>;
 
   userName: string;
   userServive: UserService;
+  
 
 
   constructor() {
+
+    this.userLogged = new EventEmitter<boolean>();
     const injector: any = ReflectiveInjector.resolveAndCreate([UserService]);
 
     this.userServive = injector.get(UserService);
@@ -27,6 +31,8 @@ export class UserInjectorComponent {
     this.userName = this.userServive.getUser().name || 'unknown JSON object';
 
     console.log('Username is: ', this.userName);
+    this.userLogged.emit(true);
+    
    }
 
 }

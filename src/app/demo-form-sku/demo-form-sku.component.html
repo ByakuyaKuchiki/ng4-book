@@ -19,6 +19,6 @@
 <div class="cntr">
   <div class="cntr-innr">
     <span *ngIf='!solvedForm || !myForm.valid'>Solve the Form and submit to Login</span>
-    <user-injector *ngIf="submitted" [form]="solvedForm"></user-injector>
+    <user-injector *ngIf="submitted" [form]="solvedForm" (userLogged)="loggedUser($event)"></user-injector>
   </div>
 </div>
