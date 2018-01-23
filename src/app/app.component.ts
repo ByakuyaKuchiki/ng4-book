@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit {
        'Black Running Shoes',
        '/assets/images/products/black-shoes.jpg',
        ['Men', 'Shoes', 'Running Shoes'],
-       109.99),
+       109.90),
        new Product(
        'NEATOJACKET',
        'Blue Jacket',

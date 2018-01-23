@@ -15,7 +15,8 @@ export class Product {
         this.priceService = service || new MockPriceService() ;
     }
 
-    totalPrice(state: string){
+    totalPrice(state?: string){
+        state = state || 'FL';
         return this.priceService.calculateTotalPrice(this.price, state);
     }
 }
