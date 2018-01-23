@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { FormBuilder,
           FormGroup,
           Validators,
@@ -10,7 +10,7 @@ import { Validation } from "../tools/validations";
   templateUrl: './demo-form-sku.component.html',
   styleUrls: ['./demo-form-sku.component.css']
 })
-export class DemoFormSkuComponent{
+export class DemoFormSkuComponent implements AfterViewInit{
 
   myForm: FormGroup;
   sku: AbstractControl;
@@ -26,5 +26,16 @@ export class DemoFormSkuComponent{
 
   onSubmit(form: any):void {
     console.log('submited', form);
+  }
+
+  ngAfterViewInit(){
+    $("#inpt_search").on('focus', function () {
+      $(this).parent('label').addClass('active');
+    });
+    
+    $("#inpt_search").on('blur', function () {
+      if($(this).val().length == 0)
+        $(this).parent('label').removeClass('active');
+    });
   }
 }
