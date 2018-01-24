@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, Input } from '@angular/core';
+import { Component, OnInit, HostBinding, Input, AfterViewInit } from '@angular/core';
 import { Article } from "../modeles/article.model";
 import { CustomMath } from "../tools/maths";
 
@@ -22,7 +22,8 @@ export class ArticleComponent implements OnInit {
    }
 
   ngOnInit() {
-    const index =this.maths.getRand(this.themes.length);
+    this.article = this.article || new Article('Angular 2', 'http://angular.io', 3);
+    const index = this.maths.getRand(this.themes.length);
     this.currentTheme = this.themes[index];
   }
 

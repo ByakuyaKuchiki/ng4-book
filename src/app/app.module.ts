@@ -8,6 +8,8 @@ import { SlickModule } from "ngx-slick";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 
+import { AppRoutingModule } from "./routing/app-routing.module";
+
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserItemComponent } from './user-item/user-item.component';
@@ -21,6 +23,7 @@ import { ProductDepartementComponent } from './product-departement/product-depar
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { UserComponent } from './user/user.component';
 import { UserInjectorComponent } from './user.injector/user.injector.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -37,14 +40,16 @@ import { UserInjectorComponent } from './user.injector/user.injector.component';
     ProductDepartementComponent,
     DemoFormSkuComponent,
     UserComponent,
-    UserInjectorComponent
+    UserInjectorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     SlickModule.forRoot(),
     NgbModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
