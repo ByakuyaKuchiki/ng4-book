@@ -1,6 +1,9 @@
 import {
-  Component
+  Component,
+  OnInit
    } from '@angular/core';
+
+import { routes } from './routes/app-routing.module';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +11,18 @@ import {
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'tutorial app';
+
+  routesLocales = routes;
 
   constructor() {
   }
+
+  ngOnInit(): void {
+
+  }
+
+
 }

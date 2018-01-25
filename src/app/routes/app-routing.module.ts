@@ -8,7 +8,7 @@ import { ArticleComponent } from '../article/article.component';
 import { DemoFormSkuComponent } from '../demo-form-sku/demo-form-sku.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {

@@ -9,6 +9,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppRoutingModule } from './routes/app-routing.module';
+import { AnalyticsDemoModule } from './modules/analytics.module';
+
+
+
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -24,6 +28,9 @@ import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { UserComponent } from './user/user.component';
 import { UserInjectorComponent } from './user.injector/user.injector.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+
+
 
 
 @NgModule({
@@ -41,7 +48,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DemoFormSkuComponent,
     UserComponent,
     UserInjectorComponent,
-    DashboardComponent
+    DashboardComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AnalyticsDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
