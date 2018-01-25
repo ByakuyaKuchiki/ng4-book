@@ -1,9 +1,9 @@
-import { Component, 
+import { Component,
   Input,
   HostBinding } from '@angular/core';
 
 
-import { Product } from "../modeles/product.model";
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'product-row',
@@ -14,7 +14,7 @@ export class ProductRowComponent {
 
   @Input() product: Product;
   @HostBinding('attr.class') cssClass = 'item';
-  
+
   constructor() { }
 
 }

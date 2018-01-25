@@ -1,6 +1,6 @@
 import { Component, ReflectiveInjector, Input, Output, EventEmitter } from '@angular/core';
 
-import { UserService } from "../services/user/user.service";
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'user-injector',
@@ -14,7 +14,7 @@ export class UserInjectorComponent {
 
   userName: string;
   userServive: UserService;
-  
+
 
 
   constructor() {
@@ -24,15 +24,15 @@ export class UserInjectorComponent {
 
     this.userServive = injector.get(UserService);
    }
-  
-   signIn():void {
+
+   signIn(): void {
     this.userServive.setUser(this.form);
 
     this.userName = this.userServive.getUser().name || 'unknown JSON object';
 
     console.log('Username is: ', this.userName);
     this.userLogged.emit(true);
-    
+
    }
 
 }

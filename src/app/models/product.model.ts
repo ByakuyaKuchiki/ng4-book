@@ -1,5 +1,5 @@
-import { IPriceService } from "../services/interfaces/price-service.interface";
-import { MockPriceService } from "../services/interfaces/price-service.interface.mock";
+import { IPriceService } from '../services/interfaces/price-service.interface';
+import { MockPriceService } from '../services/interfaces/price-service.interface.mock';
 
 export class Product {
 

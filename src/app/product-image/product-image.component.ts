@@ -1,7 +1,7 @@
 import { Component,
   Input,
   HostBinding } from '@angular/core';
-import { Product } from '../modeles/product.model';
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'product-image',
@@ -13,10 +13,7 @@ export class ProductImageComponent {
   @Input() product: Product;
 
   @HostBinding('attr.class') cssClass = 'ui image small';
-  
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() { }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding, Input, AfterViewInit } from '@angular/core';
-import { Article } from "../modeles/article.model";
-import { CustomMath } from "../tools/maths";
+import { Article } from '../models/article.model';
+import { CustomMath } from '../tools/maths';
 
 @Component({
   selector: 'app-article',
@@ -9,7 +9,7 @@ import { CustomMath } from "../tools/maths";
 })
 export class ArticleComponent implements OnInit {
 
-  @HostBinding('attr.class') cssClass= "row";
+  @HostBinding('attr.class') cssClass = 'row';
   @Input() article: Article;
 
   themes: string[];
@@ -27,12 +27,12 @@ export class ArticleComponent implements OnInit {
     this.currentTheme = this.themes[index];
   }
 
-  voteUp():boolean{
+  voteUp(): boolean {
     this.article.voteUp();
     return false;
   }
 
-  voteDown():boolean {
+  voteDown(): boolean {
     this.article.voteDown();
     return false;
   }

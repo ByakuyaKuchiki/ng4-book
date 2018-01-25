@@ -1,13 +1,13 @@
-import { 
-  Component, 
-  OnInit, 
-  AfterViewInit, 
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
   EventEmitter
-   } from '@angular/core';
+} from '@angular/core';
 
 
-import { Article } from "../modeles/article.model";
-import { Product } from "../modeles/product.model";
+import { Article } from '../models/article.model';
+import { Product } from '../models/product.model';
 
 
 
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   products: Product[];
 
-  slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };
+  slideConfig = { 'slidesToShow': 1, 'slidesToScroll': 1 };
 
   constructor() {
     this.articles = [
@@ -31,29 +31,29 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       new Article('Angular Homepage', 'http://angular.io', 1),
     ];
 
-    this.products = [ new Product(
+    this.products = [new Product(
       'MYSHOES',
       'Black Running Shoes',
       '/assets/images/products/black-shoes.jpg',
       ['Men', 'Shoes', 'Running Shoes'],
       109.90),
-      new Product(
+    new Product(
       'NEATOJACKET',
       'Blue Jacket',
       '/assets/images/products/blue-jacket.jpg',
       ['Women', 'Apparel', 'Jackets & Vests'],
       238.99),
-      new Product(
+    new Product(
       'NICEHAT',
       'A Nice Black Hat',
       '/assets/images/products/black-hat.jpg',
       ['Men', 'Accessories', 'Hats'],
       29.99)
-   ]
+    ];
 
-   }
+  }
 
-   ngOnInit() {
+  ngOnInit() {
 
   }
 
@@ -79,11 +79,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     $('.slick-active').find('.clash-card img').fadeIn(200);
   }
 
-  sortArticle():Article[]{
+  sortArticle(): Article[] {
     return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
   }
 
-  productWasSelected(product: Product): void{
+  productWasSelected(product: Product): void {
     console.log('the product: ', product);
   }
 

@@ -9,10 +9,8 @@ import { Component,
 export class PriceDisplayComponent {
 
   @Input() price: number;
-  
+
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

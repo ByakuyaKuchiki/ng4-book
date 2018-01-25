@@ -1,11 +1,11 @@
-import { 
-  Component, 
+import {
+  Component,
   Input,
   Output,
   EventEmitter
    } from '@angular/core';
 
-import { Product } from "../modeles/product.model";
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'products-list',
@@ -21,23 +21,23 @@ export class ProductsListComponent {
   private currentProduct: Product;
 
 
-  constructor() { 
+  constructor() {
     this.onProductSelected = new EventEmitter<Product>();
   }
 
-  clicked(product: Product):void {
+  clicked(product: Product): void {
     this.currentProduct = product;
     this.onProductSelected.emit(product);
   }
 
-  isSelected(product: Product):boolean {
-    if(!product || !this.currentProduct){
+  isSelected(product: Product): boolean {
+    if (!product || !this.currentProduct) {
       return false;
     }
     return product.sku === this.currentProduct.sku;
   }
 
-  
+
 
 
 
