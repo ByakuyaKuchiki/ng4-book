@@ -5,12 +5,11 @@ export class UserService {
 
   private user;
 
-  
   setUser(newUser): void {
     this.user = newUser;
   }
 
-  getUser(): any{
+  getUser(): any {
     return this.user;
   }
 

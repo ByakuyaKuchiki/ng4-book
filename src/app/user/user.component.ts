@@ -10,7 +10,7 @@ export class UserComponent {
 
   constructor() { }
 
-  signIn(){
+  signIn() {
     console.log(`the user: ${this.userName} is logged`);
   }
 }

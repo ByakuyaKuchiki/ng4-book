@@ -1,10 +1,11 @@
-import { NgModule }             from '@angular/core';
+
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { DashboardComponent } from "../dashboard/dashboard.component";
-import { ArticleComponent } from "../article/article.component";
-import { DemoFormSkuComponent } from "../demo-form-sku/demo-form-sku.component";
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { ArticleComponent } from '../article/article.component';
+import { DemoFormSkuComponent } from '../demo-form-sku/demo-form-sku.component';
 
 
 const routes: Routes = [
@@ -13,9 +14,9 @@ const routes: Routes = [
   {
     path: 'basics',
     children: [
-      {path: '', redirectTo: 'article', pathMatch: 'full'}, 
-      {path: 'article', component: ArticleComponent}, 
-      {path: 'form-demo', component: DemoFormSkuComponent}, 
+      {path: '', redirectTo: 'article', pathMatch: 'full'},
+      {path: 'article', component: ArticleComponent},
+      {path: 'form-demo', component: DemoFormSkuComponent},
     ]
   }
 ];

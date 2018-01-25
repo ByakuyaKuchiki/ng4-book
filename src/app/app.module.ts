@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule,
-        ReactiveFormsModule } from "@angular/forms";
+        ReactiveFormsModule } from '@angular/forms';
 
-import { SlickModule } from "ngx-slick";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { SlickModule } from 'ngx-slick';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-import { AppRoutingModule } from "./routing/app-routing.module";
+import { AppRoutingModule } from './routes/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';

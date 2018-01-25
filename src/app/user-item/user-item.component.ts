@@ -11,7 +11,7 @@ export class UserItemComponent implements OnInit {
 
   @Input() nameInput: string; // accepted input
 
-  constructor() { 
+  constructor() {
     this.name = 'Felipe'; // set property value
   }
 
