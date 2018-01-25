@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { dependencyRoutes } from './dependency-routing.module';
 
 
 import { DashboardComponent } from '../dashboard/dashboard.component';
@@ -18,6 +19,10 @@ export const routes: Routes = [
       {path: 'article', component: ArticleComponent},
       {path: 'form-demo', component: DemoFormSkuComponent},
     ]
+  },
+  {
+    path: 'dependency',
+      children: dependencyRoutes
   }
 ];
 
