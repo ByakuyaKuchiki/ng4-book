@@ -31,6 +31,8 @@ import { MapGeneratorComponent } from './map-generator/map-generator.component';
 import { UserRestComponent } from './user-rest/user-rest.component';
 import { RouteFormatDirective } from './Directives/route-format.directive';
 import { RouteFormatPipe } from './Pipes/route-format.pipe';
+import { MessageService } from './services/messages/message.service';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -54,7 +56,8 @@ import { RouteFormatPipe } from './Pipes/route-format.pipe';
     MapGeneratorComponent,
     UserRestComponent,
     RouteFormatDirective,
-    RouteFormatPipe
+    RouteFormatPipe,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ import { RouteFormatPipe } from './Pipes/route-format.pipe';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [UserRestService],
+  providers: [UserRestService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
