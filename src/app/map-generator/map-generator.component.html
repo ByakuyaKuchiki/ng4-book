@@ -6,6 +6,6 @@
     </span>
   </a>
   <ul *ngIf="route.children">
-    <app-map-generator [routes]="route.children"></app-map-generator>
+    <app-map-generator [routes]="route.children" [parent]="route.path"></app-map-generator>
   </ul>
 </li>

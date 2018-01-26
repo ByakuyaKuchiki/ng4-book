@@ -11,6 +11,7 @@ import { Route } from '@angular/compiler/src/core';
 export class MapGeneratorComponent {
 
   @Input() routes: Routes;
+  @Input() parent: string;
 
   constructor() { }
 

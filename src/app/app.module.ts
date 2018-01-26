@@ -29,6 +29,7 @@ import { UserInjectorComponent } from './user.injector/user.injector.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapGeneratorComponent } from './map-generator/map-generator.component';
 import { UserRestComponent } from './user-rest/user-rest.component';
+import { RouteFormatDirective } from './route-format.directive';
 
 
 
@@ -50,7 +51,8 @@ import { UserRestComponent } from './user-rest/user-rest.component';
     UserInjectorComponent,
     DashboardComponent,
     MapGeneratorComponent,
-    UserRestComponent
+    UserRestComponent,
+    RouteFormatDirective
   ],
   imports: [
     BrowserModule,
