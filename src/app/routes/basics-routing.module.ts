@@ -9,7 +9,5 @@ import { BootstrapComponent } from '../bootstrap/bootstrap.component';
 export const basicRoutes: Routes = [
   { path: '', redirectTo: 'article', pathMatch: 'full' },
   { path: 'article', component: ArticleComponent },
-  { path: 'user-mock', component: UserRestComponent },
-  { path: 'messages', component: MessageComponent },
   { path: 'bootstrap', component: BootstrapComponent }
 ];
