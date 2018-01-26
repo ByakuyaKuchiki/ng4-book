@@ -1,6 +1,5 @@
 import {
-  Component,
-  OnInit
+  Component
    } from '@angular/core';
 
 import { routes } from './routes/app-routing.module';
@@ -13,7 +12,7 @@ import { ObjectAnalyze } from './tools/object-analyser';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   title = 'tutorial app';
 
@@ -22,14 +21,5 @@ export class AppComponent implements OnInit {
 
   constructor() {
     this.routesA = new ObjectAnalyze(routes);
-  }
-
-  ngOnInit(): void {
-    console.log(this.routesLocales);
-    console.log(this.routesA.getAll());
-  }
-
-  pathAnalyser(): void {
-    // get nested keys
   }
 }

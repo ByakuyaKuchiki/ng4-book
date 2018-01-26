@@ -9,9 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppRoutingModule } from './routes/app-routing.module';
-import { AnalyticsDemoModule } from './modules/analytics.module';
 
-
+import { UserRestService } from './services/user/user-rest.service';
 
 
 import { AppComponent } from './app.component';
@@ -28,8 +27,8 @@ import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { UserComponent } from './user/user.component';
 import { UserInjectorComponent } from './user.injector/user.injector.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AnalyticsComponent } from './analytics/analytics.component';
 import { MapGeneratorComponent } from './map-generator/map-generator.component';
+import { UserRestComponent } from './user-rest/user-rest.component';
 
 
 
@@ -50,8 +49,8 @@ import { MapGeneratorComponent } from './map-generator/map-generator.component';
     UserComponent,
     UserInjectorComponent,
     DashboardComponent,
-    AnalyticsComponent,
-    MapGeneratorComponent
+    MapGeneratorComponent,
+    UserRestComponent
   ],
   imports: [
     BrowserModule,
@@ -59,10 +58,9 @@ import { MapGeneratorComponent } from './map-generator/map-generator.component';
     NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    AnalyticsDemoModule
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [UserRestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
