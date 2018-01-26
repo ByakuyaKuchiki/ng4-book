@@ -7,7 +7,7 @@ import { FormsModule,
         ReactiveFormsModule } from '@angular/forms';
 
 import { SlickModule } from 'ngx-slick';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppRoutingModule } from './routes/app-routing.module';
@@ -35,6 +35,7 @@ import { RouteFormatDirective } from './Directives/route-format.directive';
 import { RouteFormatPipe } from './Pipes/route-format.pipe';
 import { MessageService } from './services/messages/message.service';
 import { MessageComponent } from './message/message.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
 
 
 
@@ -59,12 +60,14 @@ import { MessageComponent } from './message/message.component';
     UserRestComponent,
     RouteFormatDirective,
     RouteFormatPipe,
-    MessageComponent
+    MessageComponent,
+    BootstrapComponent
   ],
   imports: [
     BrowserModule,
     SlickModule.forRoot(),
     NgbModule.forRoot(),
+    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
