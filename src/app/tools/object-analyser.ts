@@ -8,12 +8,12 @@ export class ObjectAnalyze {
     }
 
     // -- verify type
-    isObject(object) {
+    isObject(object): boolean {
         return Object.prototype.toString.call(object) === '[object Object]';
     }
 
     // -- generate mapping of the object
-    getKeys(obj?: Object, prefix?: string) {
+    getKeys(obj?: Object, prefix?: string): string[] {
         obj = obj ? obj : this.obj;
         const keys = Object.keys(obj);
         prefix = prefix ? prefix + '.' : '';
@@ -27,7 +27,7 @@ export class ObjectAnalyze {
         }, []);
     }
 
-    valueByMap(object: object, path: string, prefix?: string) {
+    valueByMap(object: object, path: string, prefix?: string): any {
         const val = null;
         let current = object;
         prefix = prefix ? prefix : '.';
@@ -40,7 +40,7 @@ export class ObjectAnalyze {
         return current;
     }
 
-    getAll() {
+    getAll(): any[] {
         const result = [];
         this.getKeys().forEach(path => {
             let index: MapObject;

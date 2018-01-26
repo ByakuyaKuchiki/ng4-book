@@ -2,14 +2,7 @@
 <div class="area"></div>
 <nav class="main-menu">
   <ul>
-    <li *ngFor="let route of routesLocales">
-      <a routerLink="/{{route.path}}">
-        <i class="fa fa-list fa-2x"></i>
-        <span class="nav-text">
-          {{route.redirectTo || route.path}}
-        </span>
-      </a>
-    </li>
+    <app-map-generator [routes]="routesLocales"></app-map-generator>
   </ul>
 </nav>
 

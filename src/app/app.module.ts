@@ -29,6 +29,7 @@ import { UserComponent } from './user/user.component';
 import { UserInjectorComponent } from './user.injector/user.injector.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { MapGeneratorComponent } from './map-generator/map-generator.component';
 
 
 
@@ -49,7 +50,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     UserComponent,
     UserInjectorComponent,
     DashboardComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    MapGeneratorComponent
   ],
   imports: [
     BrowserModule,

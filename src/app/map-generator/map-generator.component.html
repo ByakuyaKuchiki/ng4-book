@@ -1,0 +1,11 @@
+<li *ngFor="let route of routes">
+  <a routerLink="/{{route.path}}">
+    <i class="fa fa-list fa-2x route--{{route.path || route.redirectTo}}"></i>
+    <span class="nav-text">
+      {{route.path || removeSpecialChar(route.redirectTo,'')}}
+    </span>
+  </a>
+  <ul *ngIf="route.children">
+    <app-map-generator [routes]="route.children"></app-map-generator>
+  </ul>
+</li>
