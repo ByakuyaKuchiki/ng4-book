@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { UserRestService } from '../services/user/user-rest.service';
 import { IUser } from '../services/interfaces/user.interface';
@@ -8,7 +8,7 @@ import { IUser } from '../services/interfaces/user.interface';
   templateUrl: './user-rest.component.html',
   styleUrls: ['./user-rest.component.css']
 })
-export class UserRestComponent implements OnInit {
+export class UserRestComponent implements OnInit, AfterViewInit {
 
   users: IUser[];
 
@@ -21,6 +21,12 @@ export class UserRestComponent implements OnInit {
   getMockUsers(): void {
     this.userServ.getMockUsers()
                   .subscribe(users => this.users = users);
+  }
+
+  ngAfterViewInit(): void {
+    $('.card').click(function() {
+      $(this).toggleClass('flipped');
+    });
   }
 
 }

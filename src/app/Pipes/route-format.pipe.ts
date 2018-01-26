@@ -6,7 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RouteFormatPipe implements PipeTransform {
 
   transform(value: string, parent: string): string {
-    return parent + '/' + value;
+    if (!parent && value === '') {
+      return '';
+    } else if (!parent || parent === '' || parent === '/') {
+      return value;
+    } else {
+      return parent + '/' + value;
+    }
   }
 
 }
