@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { FormsModule,
         ReactiveFormsModule } from '@angular/forms';
@@ -65,7 +67,8 @@ import { MessageComponent } from './message/message.component';
     NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [UserRestService, MessageService],
   bootstrap: [AppComponent]

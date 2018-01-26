@@ -23,6 +23,7 @@
     "@angular/router": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.9",
     "@types/jquery": "^3.2.18",
+    "angular-in-memory-web-api": "^0.5.3",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
     "ngx-slick": "^0.1.3",

@@ -1,17 +1,19 @@
 <div *ngIf="messagesSer.messages.length">
 
-    <h2>Messages</h2>
-    <button class="button"
-            (click)="messagesSer.clearMessage()">clear</button>
-    <div *ngFor='let message of messagesSer.messages'> <div class="Message Message--orange">
-        <div class="Message-icon">
-          <i class="fa fa-exclamation"></i>
-        </div>
-        <div class="Message-body">
-          <p>{{message}}</p>
-        </div>
-        <button class="Message-close js-messageClose"><i class="fa fa-times"></i></button>
-      </div> </div>
-  
+  <h2>Messages</h2>
+  <button class="button" (click)="messagesSer.clearMessage()">clear</button>
+  <div *ngFor='let message of messagesSer.messages'>
+    <div class="Message Message--orange">
+      <div class="Message-icon">
+        <i class="fa fa-exclamation"></i>
+      </div>
+      <div class="Message-body">
+        <p>{{message}}</p>
+      </div>
+      <button class="Message-close js-messageClose">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
   </div>
 
+</div>
