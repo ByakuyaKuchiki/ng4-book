@@ -1,5 +1,5 @@
 <li *ngFor="let route of routes">
-  <a routerLink="/{{route.path}}">
+  <a routerLink="/{{route.path | routeFormat: parent}}">
     <i class="fa fa-list fa-2x route--{{route.path || removeSpecialChar(route.redirectTo,'')}}"></i>
     <span class="nav-text">
       {{route.path || removeSpecialChar(route.redirectTo,'')}}
